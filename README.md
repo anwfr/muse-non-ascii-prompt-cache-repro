@@ -95,6 +95,6 @@ Python 3 only, a few cents on Muse.
 
 - [`DETAILS.md`](DETAILS.md): every run, the threshold and window measurements with their request ids,
   and the workaround on real Claude Code sessions.
-- [`runs/`](runs/): raw requests, responses and request ids of every run. The folders
-  `runs/claude-code_*` and `runs/replay_*` carry Claude Code's own prompt text; they are attached to our
-  message and are not in any public copy.
+- [`runs/`](runs/): raw requests, responses and request ids of every run. The recorded Claude Code
+  sessions (`runs/claude-code_*`) and their replays (`runs/replay_*`) carry Claude Code's own prompt
+  text: they are not in this public repository; we can share them privately on request.

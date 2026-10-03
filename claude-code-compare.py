@@ -32,6 +32,7 @@ HOP = {"host", "content-length", "connection", "transfer-encoding", "accept-enco
 # replaced by its length in the saved copies; nothing else is changed.
 PERSONAL = [t.strip() for t in (p.read_text() for p in (pathlib.Path.home() / ".claude").glob("*.md")) if t.strip()]
 HOME = str(pathlib.Path.home())  # the home directory path becomes "~"
+CLAUDE_MD = re.compile(r"<user_claude_md>.*?</user_claude_md>", re.S)
 OPTIONS = ("--ascii-tools",)
 
 
@@ -55,6 +56,10 @@ def redact(node, found):
             if text in node:
                 node = node.replace(text, "<redacted: personal instruction file, %d chars>" % len(text))
                 found.add("personal instruction files")
+        if CLAUDE_MD.search(node):  # the safety check quotes them indented, so the exact match above misses them
+            node = CLAUDE_MD.sub(lambda m: "<user_claude_md><redacted: personal instruction files, %d chars></user_claude_md>"
+                                 % len(m.group(0)), node)
+            found.add("personal instruction files")
         if HOME in node:
             node = node.replace(HOME, "~")
             found.add("home directory path")

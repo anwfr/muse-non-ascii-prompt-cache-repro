@@ -188,9 +188,9 @@ definitions of Claude Code 2.1.283 already carried these em dashes.
 
 In the Claude Code runs, a few values are hidden in the saved bodies, listed in each file's `redacted`
 field: device and session ids, an email address, the home directory path, and the text of personal
-instruction files. The folders
-`runs/claude-code_*` and `runs/replay_*` carry Claude Code's own prompt text: they are attached to our
-message and are not in any public copy.
+instruction files. The recorded Claude Code sessions (`runs/claude-code_*`) and their replays
+(`runs/replay_*`) carry Claude Code's own prompt text: they are not in this public repository; we can
+share them privately on request.
 
 ## Reproduce
 
