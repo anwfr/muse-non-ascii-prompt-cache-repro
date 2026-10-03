@@ -1,0 +1,20 @@
+{
+ "url": "https://api.meta.ai/v1/messages",
+ "request_headers": {
+  "anthropic-version": "2023-06-01",
+  "content-type": "application/json",
+  "x-api-key": "<redacted>"
+ },
+ "status": 400,
+ "response_headers": {
+  "Content-Type": "application/json",
+  "x-request-id": "9fea41a2-2ee3-49cb-94ad-ab6ccb0a39d5",
+  "Access-Control-Allow-Origin": "*",
+  "Date": "Sat, 03 Oct 2026 17:01:19 GMT",
+  "x-route": "model-api-rust",
+  "Proxy-Status": "http_request_error; e_proxy=\"AcSxYaYWm13V-P4FOUWfN6b7nVXM90JNBFTFtpqK8_VLGjpv0ASCzVkkK6jaPb4VysXKpUS5nb-Gt6EzEvC1nQ\"; e_fb_twtaskhandle=\"AcRdtGHj0QtK1mxgj6g7sPj1D-ipNFMaSGzQ5ZpOqOkEWVf_ZSowukmD9M7Z1baR8lJqzfbPvr4byDSmdD8SqPS8Js8fqn7gt95ofvaheg\"; e_upip=\"AcQhc3D_BxnpwE19O6GfvpEJzDQEdBz2OqelrYcf48tUqWAii0r0WNCu2vjibbOgzGWVwvsgcgb9Y--ox73uElZKOVYIfp2lujSSYKpca88\"; e_fb_zone=\"AcS6FKoDPKIST-lO-PIB0ov0OsKx0UjaMODY58B80I_JeQCuax0u4LSUoVAq6sN7\"; e_clientaddr=\"AcQ-F6uftktYDqAZGC8hCTdJjOtj2KeeHPso_SfC6Lohl_-f4SRGHx5TpGwujOoEpa-OQPuqKN8Gxyo6mpK7m0hk3sNe6QsL9JrRjG_fXwX7lhhOJQ\"; e_fb_vipaddr=\"AcSsEkg4Ps6ZJtYI-ZUfObBxVV49WtuTbl4EByP01Q82kAUSrx32Q7tvYt39qFcbGsKJECaKy9V1vEPn-Qfo9gaBcteMBNXHD7tqiENc\", http_request_error; e_proxy=\"AcRE-eNzkGGWSwM1avZx8l9YJponK336Izkow_rROEyA8RdxtFa0UeADHzmrVxf4tRzWon0T-KDB_ew\"; e_fb_twtaskhandle=\"AcSwJzZsCIXHl_wdW196pp3LcNHmVYZx4QLzGOLkZ10saeqCxHUXuuXyJG5o9I_trfCV8JBf8bmAWbgu7RJmcEwKEti1rg6xPawm\"; e_upip=\"AcShfh8FZ8coojQ-lBIFMgX1xUmM1ELBw-bXJZXqY6IMsZ6DOXGfHszeCP2FReQ_7Jt9yCF_srOXJxE9Epa8c6dK2dZaq3OvaOYGz3BC\"; e_fb_zone=\"AcRde79Pyl1CKQgmM-dqgEBGzVRWS0DExkRaD78BZxdfrolcC4D2CqJKLIeVUA\"; e_clientaddr=\"AcSudydli_wQFoK_ljiJqZ4Ufz8BpG4SDYf0pFycQS888DHznZgQAFn0I-6lFaaGoqMtSK9xMMTx10oCBg\"; e_fb_vipaddr=\"AcTsuSa6reZ-_QomeQQeCDSSuJlkSEqGD5_1XgLNs1EZl5YWGZckf-VB9oeg-JPqxaibRstr_pM\"",
+  "Connection": "close",
+  "Content-Length": "106"
+ },
+ "response_raw": "{\"error\":{\"message\":\"unknown parameter `prompt_cache_key`\",\"type\":\"invalid_request_error\"},\"type\":\"error\"}"
+}

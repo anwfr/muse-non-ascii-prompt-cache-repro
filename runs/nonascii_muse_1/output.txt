@@ -1,0 +1,43 @@
+Model muse-spark-1.3-contributor, https://api.meta.ai/v1/messages
+
+A - one tool, ASCII description
+  request 1:   3901 tokens sent,      0 read from cache   request id de99b475-3270-4323-9bf0-f422290d49c2   Sat, 03 Oct 2026 16:57:51 GMT
+  request 2:   5596 tokens sent,   3825 read from cache  =  98% of the previous request   request id e06858c7-0ed9-403e-9a2e-f9c073c1d1d3   Sat, 03 Oct 2026 16:57:54 GMT
+  request 3:   7291 tokens sent,   5489 read from cache  =  98% of the previous request   request id b0b2e1ef-33e8-44dc-a532-15d66b698b48   Sat, 03 Oct 2026 16:57:58 GMT
+  request 4:   8986 tokens sent,   7281 read from cache  = 100% of the previous request   request id f8c02b39-f080-4a7a-a232-3ee9e2c73bee   Sat, 03 Oct 2026 16:58:00 GMT
+  expected on requests 2 to 4: 100%
+
+B - same tool, six em dashes in its description
+  request 1:   3902 tokens sent,      0 read from cache   request id 7d859c06-6916-4bf5-875a-091af4c3e97e   Sat, 03 Oct 2026 16:58:03 GMT
+  request 2:   5597 tokens sent,      0 read from cache  =   0% of the previous request   request id df0aca92-a03e-40e2-a3dd-911bd3aa55c2   Sat, 03 Oct 2026 16:58:07 GMT
+  request 3:   7292 tokens sent,      0 read from cache  =   0% of the previous request   request id 5d01dd03-1ca2-456a-a8e3-ddd5a0876a14   Sat, 03 Oct 2026 16:58:10 GMT
+  request 4:   8987 tokens sent,      0 read from cache  =   0% of the previous request   request id c3799aae-6183-4f23-9c55-a691c3e742cb   Sat, 03 Oct 2026 16:58:12 GMT
+  expected on requests 2 to 4: 100%
+
+C - same tool, one em dash in its description
+  request 1:   3901 tokens sent,      0 read from cache   request id c802e335-b866-4b6f-b345-5a2fe535b8c8   Sat, 03 Oct 2026 16:58:14 GMT
+  request 2:   5596 tokens sent,   3825 read from cache  =  98% of the previous request   request id 0af56bbd-6a4e-42ef-b21a-494c177fbea6   Sat, 03 Oct 2026 16:58:16 GMT
+  request 3:   7291 tokens sent,   5489 read from cache  =  98% of the previous request   request id b12d1908-c3b8-44a8-a1fe-0c56c33f7eb1   Sat, 03 Oct 2026 16:58:18 GMT
+  request 4:   8986 tokens sent,   7281 read from cache  = 100% of the previous request   request id c2a72536-ef66-452e-9d51-25c96806a28a   Sat, 03 Oct 2026 16:58:20 GMT
+  expected on requests 2 to 4: 100%
+
+D - no tool, six em dashes at character 100 of the system prompt
+  request 1:   3398 tokens sent,      0 read from cache   request id 65aecd8b-7613-4688-8697-0fb75638b3d7   Sat, 03 Oct 2026 16:58:22 GMT
+  request 2:   5093 tokens sent,      0 read from cache  =   0% of the previous request   request id bc9bed56-0cc7-4993-8ad9-b82a5519b85a   Sat, 03 Oct 2026 16:58:24 GMT
+  request 3:   6788 tokens sent,      0 read from cache  =   0% of the previous request   request id 3cd171f4-fb03-4e6e-bcde-1ce070aa7d7a   Sat, 03 Oct 2026 16:58:26 GMT
+  request 4:   8483 tokens sent,      0 read from cache  =   0% of the previous request   request id 0b14e20a-f687-4ace-8349-e893ec1285eb   Sat, 03 Oct 2026 16:58:29 GMT
+  expected on requests 2 to 4: 100%
+
+E - no tool, the same six em dashes at character 5 000 of the system prompt
+  request 1:   3398 tokens sent,      0 read from cache   request id ff5794a6-a8fb-493f-bd01-6aba54fd4cfa   Sat, 03 Oct 2026 16:58:32 GMT
+  request 2:   5093 tokens sent,   3313 read from cache  =  97% of the previous request   request id 0e813836-77e4-466b-94cd-53a6ffeb047d   Sat, 03 Oct 2026 16:58:34 GMT
+  request 3:   6788 tokens sent,   4977 read from cache  =  98% of the previous request   request id 7e8443bf-212e-4fc9-8b53-1e4dee091f42   Sat, 03 Oct 2026 16:58:36 GMT
+  request 4:   8483 tokens sent,   6769 read from cache  = 100% of the previous request   request id b342f761-141a-41ee-8995-9e8add5effac   Sat, 03 Oct 2026 16:58:40 GMT
+  expected on requests 2 to 4: 100%
+
+F - case A, without any cache marker
+  request 1:   3901 tokens sent,      0 read from cache   request id 2ceddcd7-dd7b-4891-b945-039847b18b50   Sat, 03 Oct 2026 16:58:42 GMT
+  request 2:   5596 tokens sent,      0 read from cache  =   0% of the previous request   request id be06f896-8e1b-4ce3-bbc9-e813841285ba   Sat, 03 Oct 2026 16:58:48 GMT
+  request 3:   7291 tokens sent,      0 read from cache  =   0% of the previous request   request id c6899340-1670-4c64-848b-2eb0ad79fc65   Sat, 03 Oct 2026 16:59:42 GMT
+  request 4:   8986 tokens sent,      0 read from cache  =   0% of the previous request   request id 63c34d78-a497-496f-9e35-5f753ebdff46   Sat, 03 Oct 2026 16:59:45 GMT
+  expected on requests 2 to 4: 100%

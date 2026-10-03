@@ -1,0 +1,41 @@
+{
+ "url": "https://api.meta.ai/v1/messages",
+ "request_headers": {
+  "anthropic-version": "2023-06-01",
+  "content-type": "application/json",
+  "x-api-key": "<redacted>"
+ },
+ "request_body_file": "D-system-dashes-at-100-turn3.request.json",
+ "status": 200,
+ "response_headers": {
+  "Content-Type": "application/json",
+  "x-ratelimit-limit-requests": "150",
+  "x-ratelimit-remaining-requests": "138",
+  "x-ratelimit-limit-tokens": "3000000",
+  "x-ratelimit-remaining-tokens": "2956152",
+  "x-request-id": "3cd171f4-fb03-4e6e-bcde-1ce070aa7d7a",
+  "Access-Control-Allow-Origin": "*",
+  "Date": "Sat, 03 Oct 2026 16:58:26 GMT",
+  "x-route": "model-api-rust",
+  "Connection": "close",
+  "Content-Length": "327"
+ },
+ "response_body": {
+  "content": [],
+  "id": "msg_6ac13432519ce87ce134459c",
+  "model": "muse-spark-1.3-contributor",
+  "role": "assistant",
+  "stop_reason": "max_tokens",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "input_tokens": 6788,
+   "output_tokens": 16,
+   "output_tokens_details": {
+    "thinking_tokens": 13
+   }
+  }
+ }
+}

@@ -1,0 +1,2 @@
+prompt_cache_key on /v1/messages: HTTP 400, request id 9fea41a2-2ee3-49cb-94ad-ab6ccb0a39d5, Sat, 03 Oct 2026 17:01:19 GMT
+  {"error":{"message":"unknown parameter `prompt_cache_key`","type":"invalid_request_error"},"type":"error"}
