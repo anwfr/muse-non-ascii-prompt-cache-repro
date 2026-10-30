@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#fcfcfb"/>
+<text x="24" y="38" font-size="20" font-weight="600" fill="#0b0b0b">How much of the previous request is read from cache</text>
+<text x="24" y="62" font-size="14" fill="#52514e">Expected: a full read (97 to 100 %) on every request. Muse muse-spark-1.3-contributor, 2026-10-30, repro.py</text>
+<text x="24" y="104" font-size="16" font-weight="600" fill="#0b0b0b">A. Tool description in ASCII</text>
+<text x="24" y="124" font-size="13" fill="#52514e">Use it - when asked - for the time…</text>
+<text x="122" y="152" font-size="12" fill="#52514e" text-anchor="middle">request 2</text>
+<text x="216" y="152" font-size="12" fill="#52514e" text-anchor="middle">request 3</text>
+<text x="310" y="152" font-size="12" fill="#52514e" text-anchor="middle">request 4</text>
+<text x="24" y="186" font-size="12" fill="#52514e">run 1</text>
+<rect x="76" y="160" width="92" height="44" rx="4" fill="#0ca30c"/>
+<text x="122" y="187" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✓ 98 %</text>
+<rect x="170" y="160" width="92" height="44" rx="4" fill="#0ca30c"/>
+<text x="216" y="187" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✓ 98 %</text>
+<rect x="264" y="160" width="92" height="44" rx="4" fill="#0ca30c"/>
+<text x="310" y="187" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✓ 100 %</text>
+<text x="24" y="232" font-size="12" fill="#52514e">run 2</text>
+<rect x="76" y="206" width="92" height="44" rx="4" fill="#0ca30c"/>
+<text x="122" y="233" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✓ 98 %</text>
+<rect x="170" y="206" width="92" height="44" rx="4" fill="#0ca30c"/>
+<text x="216" y="233" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✓ 98 %</text>
+<rect x="264" y="206" width="92" height="44" rx="4" fill="#0ca30c"/>
+<text x="310" y="233" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✓ 100 %</text>
+<text x="24" y="278" font-size="12" fill="#52514e">run 3</text>
+<rect x="76" y="252" width="92" height="44" rx="4" fill="#d03b3b"/>
+<text x="122" y="279" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✗ 0 %</text>
+<rect x="170" y="252" width="92" height="44" rx="4" fill="#0ca30c"/>
+<text x="216" y="279" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✓ 98 %</text>
+<rect x="264" y="252" width="92" height="44" rx="4" fill="#0ca30c"/>
+<text x="310" y="279" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✓ 100 %</text>
+<text x="76" y="320" font-size="14" font-weight="600" fill="#0b0b0b">8 of 9 requests read in full</text>
+<text x="430" y="104" font-size="16" font-weight="600" fill="#0b0b0b">B. Same, with six em dashes</text>
+<text x="430" y="124" font-size="13" fill="#52514e">Use it — when asked — for the time…</text>
+<text x="528" y="152" font-size="12" fill="#52514e" text-anchor="middle">request 2</text>
+<text x="622" y="152" font-size="12" fill="#52514e" text-anchor="middle">request 3</text>
+<text x="716" y="152" font-size="12" fill="#52514e" text-anchor="middle">request 4</text>
+<text x="430" y="186" font-size="12" fill="#52514e">run 1</text>
+<rect x="482" y="160" width="92" height="44" rx="4" fill="#d03b3b"/>
+<text x="528" y="187" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✗ 0 %</text>
+<rect x="576" y="160" width="92" height="44" rx="4" fill="#0ca30c"/>
+<text x="622" y="187" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✓ 98 %</text>
+<rect x="670" y="160" width="92" height="44" rx="4" fill="#0ca30c"/>
+<text x="716" y="187" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✓ 100 %</text>
+<text x="430" y="232" font-size="12" fill="#52514e">run 2</text>
+<rect x="482" y="206" width="92" height="44" rx="4" fill="#0ca30c"/>
+<text x="528" y="233" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✓ 98 %</text>
+<rect x="576" y="206" width="92" height="44" rx="4" fill="#d03b3b"/>
+<text x="622" y="233" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✗ 0 %</text>
+<rect x="670" y="206" width="92" height="44" rx="4" fill="#fab219"/>
+<text x="716" y="233" font-size="15" font-weight="600" fill="#0b0b0b" text-anchor="middle">~ 75 %</text>
+<text x="430" y="278" font-size="12" fill="#52514e">run 3</text>
+<rect x="482" y="252" width="92" height="44" rx="4" fill="#d03b3b"/>
+<text x="528" y="279" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✗ 0 %</text>
+<rect x="576" y="252" width="92" height="44" rx="4" fill="#0ca30c"/>
+<text x="622" y="279" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">✓ 98 %</text>
+<rect x="670" y="252" width="92" height="44" rx="4" fill="#fab219"/>
+<text x="716" y="279" font-size="15" font-weight="600" fill="#0b0b0b" text-anchor="middle">~ 52 %</text>
+<text x="482" y="320" font-size="14" font-weight="600" fill="#0b0b0b">4 of 9 requests read in full</text>
+<rect x="24" y="363" width="18" height="18" rx="4" fill="#0ca30c"/><text x="33" y="376" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">✓</text>
+<text x="50" y="376" font-size="13" fill="#52514e">read in full</text>
+<rect x="168" y="363" width="18" height="18" rx="4" fill="#fab219"/><text x="177" y="376" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="middle">~</text>
+<text x="194" y="376" font-size="13" fill="#52514e">read an older request only</text>
+<rect x="410" y="363" width="18" height="18" rx="4" fill="#d03b3b"/><text x="419" y="376" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">✗</text>
+<text x="436" y="376" font-size="13" fill="#52514e">nothing read</text>
+</svg>
