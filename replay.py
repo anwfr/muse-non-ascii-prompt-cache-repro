@@ -3,7 +3,7 @@
 Run:  API_KEY=<Muse key> python3 replay.py <claude-code run folder> <out-dir> [as-is|ascii-tools]
 Needs Python 3 only. Costs a few cents on Muse.
 
-The run folder is one of runs/claude-code_muse_*: its requests/NN.request.json are the bodies Claude Code sent.
+The run folder is one of runs/2026-10-03/claude-code_muse_*: its requests/NN.request.json are the bodies Claude Code sent.
 Only the conversation requests (those carrying tools) are replayed, in order, with a new tag at the start of the
 system prompt so that nothing cached by an earlier replay can help. `metadata` is always dropped (it is not
 prompt text). Variants:

@@ -1,0 +1,8 @@
+Model muse-spark-1.3-contributor, https://api.meta.ai/v1/messages
+Share of the previous request read from cache, requests 2, 3, 4:
+run 1  A (ASCII)           98% (a1920f60-f16f-431f-9c5b-50a7ef1a597d)   98% (8ae7398c-3590-4508-a88b-c81213af9787)  100% (730b2695-6f87-4fa6-ba10-9b33332eec01)
+run 1  B (six em dashes)    0% (fe3c4891-0905-4d04-aa9a-38d83a3ed9aa)   98% (eab47b77-1229-44ff-8035-6af6389e45b1)  100% (76a7ae42-5342-4795-b8b7-c6179f2a7fe8)
+run 2  A (ASCII)           98% (da4b175e-0fc9-4c7f-ac70-ef2e71b52e1c)   98% (1163dc1f-9011-450e-b6c5-94e0183170c1)  100% (72456a74-3e2d-425b-aa1d-b61c34fadf66)
+run 2  B (six em dashes)   98% (140b7b6e-dad9-47ef-9a92-3d7e6c29a79d)    0% (478c4b35-f79a-4db0-9742-9d2de420c687)   75% (62d33094-cdc8-46b2-aef9-e6ee61886d6e)
+run 3  A (ASCII)            0% (0d49e109-2ba9-48ec-b759-d46b2d559f50)   98% (3c0631d1-46b6-4ecc-9879-651c27a372f7)  100% (ce0e6295-d18b-43bb-828e-ffd0a838208c)
+run 3  B (six em dashes)    0% (556b10ae-b25d-4b81-9b26-6e370e580a08)   98% (c08be789-e419-4d1d-a865-31186c552fa6)   52% (2bf0d72d-488e-4edb-a821-2cf7e1086bd1)

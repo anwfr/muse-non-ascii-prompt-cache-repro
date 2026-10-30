@@ -3,7 +3,31 @@
 Start with [`README.md`](README.md). This page is for the engineer who wants to check every claim
 against a file.
 
-## All runs
+## 2026-10-30: the same tests, four weeks later
+
+Same model, same endpoint, same scripts. Raw requests, responses and request ids:
+[`runs/2026-10-30`](runs/2026-10-30/) — `minimal` ([`repro.py`](repro.py)), `six-cases_1` to `_3`
+([`repro-nonascii.py`](repro-nonascii.py)), `pauses` ([`pause-probe.py`](pause-probe.py), 2, 10 and 30
+seconds between requests). Requests 2 to 4 of each conversation, read in full when they read at least
+97 % of the previous request:
+
+| case | requests | read in full | mean share read |
+|---|---|---|---|
+| A. one tool, ASCII description | 27 | 25 | 91 % |
+| B. same tool, six em dashes in its description | 27 | 10 | 57 % |
+| C. same tool, one em dash | 9 | 9 | 99 % |
+| D. no tool, six em dashes at character 100 of the system prompt | 9 | 4 | 58 % |
+| E. no tool, the same six em dashes at character 5 000 | 9 | 9 | 98 % |
+| F. case A without any `cache_control` marker | 9 | 6 | 74 % |
+
+Every partial read (52 to 75 %) is, to the token, a full read of an older request of the same
+conversation (request 1 or 2), never a cut inside the previous one. Pausing 10 or 30 seconds before
+the next request does not make case B read the previous one.
+
+Compared with 2026-10-03: case B no longer reads 0 % everywhere, and a request without any marker
+now reads from cache. The non-ASCII cases are still far below the ASCII ones.
+
+## All runs, 2026-10-03
 
 2026-10-03, model `muse-spark-1.3-contributor`, endpoint `https://api.meta.ai/v1/messages`, Claude Code
 2.1.288. The last column is how much of the previous request each request read from cache; expected:
@@ -13,37 +37,37 @@ against a file.
 <!-- results -->
 | run folder | where | what runs | what differs | setting | read back from the previous request, request 2 onwards |
 |---|---|---|---|---|---|
-| [`nonascii_muse_1`](runs/nonascii_muse_1/) | Muse | Test script | case A: one tool, ASCII description | — | 98 %, 98 %, 100 % |
-| [`nonascii_muse_2`](runs/nonascii_muse_2/) | Muse | Test script | case A: one tool, ASCII description | — | 98 %, 98 %, 100 % |
-| [`nonascii_muse_3`](runs/nonascii_muse_3/) | Muse | Test script | case A: one tool, ASCII description | — | 98 %, 98 %, 100 % |
-| [`nonascii_muse_1`](runs/nonascii_muse_1/) | Muse | Test script | case B: same tool, six em dashes in its description | — | 0 %, 0 %, 0 % |
-| [`nonascii_muse_2`](runs/nonascii_muse_2/) | Muse | Test script | case B: same tool, six em dashes in its description | — | 0 %, 0 %, 0 % |
-| [`nonascii_muse_3`](runs/nonascii_muse_3/) | Muse | Test script | case B: same tool, six em dashes in its description | — | 0 %, 0 %, 0 % |
-| [`nonascii_muse_1`](runs/nonascii_muse_1/) | Muse | Test script | case C: same tool, one em dash | — | 98 %, 98 %, 100 % |
-| [`nonascii_muse_2`](runs/nonascii_muse_2/) | Muse | Test script | case C: same tool, one em dash | — | 98 %, 98 %, 100 % |
-| [`nonascii_muse_3`](runs/nonascii_muse_3/) | Muse | Test script | case C: same tool, one em dash | — | 98 %, 98 %, 100 % |
-| [`nonascii_muse_1`](runs/nonascii_muse_1/) | Muse | Test script | case D: no tool, six em dashes at character 100 of the system prompt | — | 0 %, 0 %, 0 % |
-| [`nonascii_muse_2`](runs/nonascii_muse_2/) | Muse | Test script | case D: no tool, six em dashes at character 100 of the system prompt | — | 97 %, 0 %, 0 % |
-| [`nonascii_muse_3`](runs/nonascii_muse_3/) | Muse | Test script | case D: no tool, six em dashes at character 100 of the system prompt | — | 0 %, 0 %, 0 % |
-| [`nonascii_muse_1`](runs/nonascii_muse_1/) | Muse | Test script | case E: no tool, six em dashes at character 5 000 of the system prompt | — | 97 %, 98 %, 100 % |
-| [`nonascii_muse_2`](runs/nonascii_muse_2/) | Muse | Test script | case E: no tool, six em dashes at character 5 000 of the system prompt | — | 97 %, 98 %, 0 % |
-| [`nonascii_muse_3`](runs/nonascii_muse_3/) | Muse | Test script | case E: no tool, six em dashes at character 5 000 of the system prompt | — | 98 %, 98 %, 100 % |
-| [`nonascii_muse_1`](runs/nonascii_muse_1/) | Muse | Test script | case F: case A without any cache marker | — | 0 %, 0 %, 0 % |
-| [`nonascii_muse_2`](runs/nonascii_muse_2/) | Muse | Test script | case F: case A without any cache marker | — | 0 %, 0 %, 0 % |
-| [`nonascii_muse_3`](runs/nonascii_muse_3/) | Muse | Test script | case F: case A without any cache marker | — | 0 %, 0 %, 0 % |
-| [`claude-code_muse_1`](runs/claude-code_muse_1/) | Muse | Claude Code | default settings | — | 0 %, 0 %, 0 %, 0 % |
-| [`claude-code_muse_2`](runs/claude-code_muse_2/) | Muse | Claude Code | default settings | — | 0 %, 0 %, 0 %, 0 % |
-| [`claude-code_muse_3`](runs/claude-code_muse_3/) | Muse | Claude Code | default settings | — | 0 %, 0 %, 0 %, 0 %, 95 % |
-| [`claude-code_muse_4`](runs/claude-code_muse_4/) | Muse | Claude Code | default settings | — | 0 %, 0 %, 0 %, 0 % |
-| [`claude-code-asciitools_muse_1`](runs/claude-code-asciitools_muse_1/) | Muse | Claude Code | tool descriptions folded to ASCII by the relay | — | 99 %, 100 %, 100 %, 100 %, 100 % |
-| [`claude-code-asciitools_muse_2`](runs/claude-code-asciitools_muse_2/) | Muse | Claude Code | tool descriptions folded to ASCII by the relay | — | 99 %, 100 %, 100 %, 100 %, 100 % |
-| [`claude-code-asciitools_muse_3`](runs/claude-code-asciitools_muse_3/) | Muse | Claude Code | tool descriptions folded to ASCII by the relay | — | 99 %, 100 %, 100 %, 100 % |
-| [`replay_muse_1_as-is`](runs/replay_muse_1_as-is/) | Muse | Replay of Claude Code | the recorded requests, as sent | — | 0 %, 0 %, 0 %, 0 % |
-| [`replay_muse_2_as-is`](runs/replay_muse_2_as-is/) | Muse | Replay of Claude Code | the recorded requests, as sent | — | 0 %, 0 %, 0 %, 0 % |
-| [`replay_muse_3_as-is`](runs/replay_muse_3_as-is/) | Muse | Replay of Claude Code | the recorded requests, as sent | — | 0 %, 0 %, 0 %, 70 %, 0 % |
-| [`replay_muse_1_ascii-tools`](runs/replay_muse_1_ascii-tools/) | Muse | Replay of Claude Code | tool descriptions folded to ASCII | — | 0 %, 100 %, 100 %, 100 % |
-| [`replay_muse_2_ascii-tools`](runs/replay_muse_2_ascii-tools/) | Muse | Replay of Claude Code | tool descriptions folded to ASCII | — | 99 %, 100 %, 100 %, 100 % |
-| [`replay_muse_3_ascii-tools`](runs/replay_muse_3_ascii-tools/) | Muse | Replay of Claude Code | tool descriptions folded to ASCII | — | 99 %, 100 %, 100 %, 100 %, 100 % |
+| [`nonascii_muse_1`](runs/2026-10-03/nonascii_muse_1/) | Muse | Test script | case A: one tool, ASCII description | — | 98 %, 98 %, 100 % |
+| [`nonascii_muse_2`](runs/2026-10-03/nonascii_muse_2/) | Muse | Test script | case A: one tool, ASCII description | — | 98 %, 98 %, 100 % |
+| [`nonascii_muse_3`](runs/2026-10-03/nonascii_muse_3/) | Muse | Test script | case A: one tool, ASCII description | — | 98 %, 98 %, 100 % |
+| [`nonascii_muse_1`](runs/2026-10-03/nonascii_muse_1/) | Muse | Test script | case B: same tool, six em dashes in its description | — | 0 %, 0 %, 0 % |
+| [`nonascii_muse_2`](runs/2026-10-03/nonascii_muse_2/) | Muse | Test script | case B: same tool, six em dashes in its description | — | 0 %, 0 %, 0 % |
+| [`nonascii_muse_3`](runs/2026-10-03/nonascii_muse_3/) | Muse | Test script | case B: same tool, six em dashes in its description | — | 0 %, 0 %, 0 % |
+| [`nonascii_muse_1`](runs/2026-10-03/nonascii_muse_1/) | Muse | Test script | case C: same tool, one em dash | — | 98 %, 98 %, 100 % |
+| [`nonascii_muse_2`](runs/2026-10-03/nonascii_muse_2/) | Muse | Test script | case C: same tool, one em dash | — | 98 %, 98 %, 100 % |
+| [`nonascii_muse_3`](runs/2026-10-03/nonascii_muse_3/) | Muse | Test script | case C: same tool, one em dash | — | 98 %, 98 %, 100 % |
+| [`nonascii_muse_1`](runs/2026-10-03/nonascii_muse_1/) | Muse | Test script | case D: no tool, six em dashes at character 100 of the system prompt | — | 0 %, 0 %, 0 % |
+| [`nonascii_muse_2`](runs/2026-10-03/nonascii_muse_2/) | Muse | Test script | case D: no tool, six em dashes at character 100 of the system prompt | — | 97 %, 0 %, 0 % |
+| [`nonascii_muse_3`](runs/2026-10-03/nonascii_muse_3/) | Muse | Test script | case D: no tool, six em dashes at character 100 of the system prompt | — | 0 %, 0 %, 0 % |
+| [`nonascii_muse_1`](runs/2026-10-03/nonascii_muse_1/) | Muse | Test script | case E: no tool, six em dashes at character 5 000 of the system prompt | — | 97 %, 98 %, 100 % |
+| [`nonascii_muse_2`](runs/2026-10-03/nonascii_muse_2/) | Muse | Test script | case E: no tool, six em dashes at character 5 000 of the system prompt | — | 97 %, 98 %, 0 % |
+| [`nonascii_muse_3`](runs/2026-10-03/nonascii_muse_3/) | Muse | Test script | case E: no tool, six em dashes at character 5 000 of the system prompt | — | 98 %, 98 %, 100 % |
+| [`nonascii_muse_1`](runs/2026-10-03/nonascii_muse_1/) | Muse | Test script | case F: case A without any cache marker | — | 0 %, 0 %, 0 % |
+| [`nonascii_muse_2`](runs/2026-10-03/nonascii_muse_2/) | Muse | Test script | case F: case A without any cache marker | — | 0 %, 0 %, 0 % |
+| [`nonascii_muse_3`](runs/2026-10-03/nonascii_muse_3/) | Muse | Test script | case F: case A without any cache marker | — | 0 %, 0 %, 0 % |
+| [`claude-code_muse_1`](runs/2026-10-03/claude-code_muse_1/) | Muse | Claude Code | default settings | — | 0 %, 0 %, 0 %, 0 % |
+| [`claude-code_muse_2`](runs/2026-10-03/claude-code_muse_2/) | Muse | Claude Code | default settings | — | 0 %, 0 %, 0 %, 0 % |
+| [`claude-code_muse_3`](runs/2026-10-03/claude-code_muse_3/) | Muse | Claude Code | default settings | — | 0 %, 0 %, 0 %, 0 %, 95 % |
+| [`claude-code_muse_4`](runs/2026-10-03/claude-code_muse_4/) | Muse | Claude Code | default settings | — | 0 %, 0 %, 0 %, 0 % |
+| [`claude-code-asciitools_muse_1`](runs/2026-10-03/claude-code-asciitools_muse_1/) | Muse | Claude Code | tool descriptions folded to ASCII by the relay | — | 99 %, 100 %, 100 %, 100 %, 100 % |
+| [`claude-code-asciitools_muse_2`](runs/2026-10-03/claude-code-asciitools_muse_2/) | Muse | Claude Code | tool descriptions folded to ASCII by the relay | — | 99 %, 100 %, 100 %, 100 %, 100 % |
+| [`claude-code-asciitools_muse_3`](runs/2026-10-03/claude-code-asciitools_muse_3/) | Muse | Claude Code | tool descriptions folded to ASCII by the relay | — | 99 %, 100 %, 100 %, 100 % |
+| [`replay_muse_1_as-is`](runs/2026-10-03/replay_muse_1_as-is/) | Muse | Replay of Claude Code | the recorded requests, as sent | — | 0 %, 0 %, 0 %, 0 % |
+| [`replay_muse_2_as-is`](runs/2026-10-03/replay_muse_2_as-is/) | Muse | Replay of Claude Code | the recorded requests, as sent | — | 0 %, 0 %, 0 %, 0 % |
+| [`replay_muse_3_as-is`](runs/2026-10-03/replay_muse_3_as-is/) | Muse | Replay of Claude Code | the recorded requests, as sent | — | 0 %, 0 %, 0 %, 70 %, 0 % |
+| [`replay_muse_1_ascii-tools`](runs/2026-10-03/replay_muse_1_ascii-tools/) | Muse | Replay of Claude Code | tool descriptions folded to ASCII | — | 0 %, 100 %, 100 %, 100 % |
+| [`replay_muse_2_ascii-tools`](runs/2026-10-03/replay_muse_2_ascii-tools/) | Muse | Replay of Claude Code | tool descriptions folded to ASCII | — | 99 %, 100 %, 100 %, 100 % |
+| [`replay_muse_3_ascii-tools`](runs/2026-10-03/replay_muse_3_ascii-tools/) | Muse | Replay of Claude Code | tool descriptions folded to ASCII | — | 99 %, 100 %, 100 %, 100 %, 100 % |
 <!-- /results -->
 
 ## Threshold and window
@@ -112,7 +136,7 @@ trials below. One marker is enough, on the system prompt or on the last message.
 
 `prompt_cache_key`, which the same page offers, is refused on `/v1/messages`:
 `400 unknown parameter prompt_cache_key` (`9fea41a2-2ee3-49cb-94ad-ab6ccb0a39d5`,
-[`runs/prompt-cache-key_muse_1`](runs/prompt-cache-key_muse_1/)).
+[`runs/2026-10-03/prompt-cache-key_muse_1`](runs/2026-10-03/prompt-cache-key_muse_1/)).
 
 ## Claude Code
 
@@ -188,17 +212,17 @@ definitions of Claude Code 2.1.283 already carried these em dashes.
 
 In the Claude Code runs, a few values are hidden in the saved bodies, listed in each file's `redacted`
 field: device and session ids, an email address, the home directory path, and the text of personal
-instruction files. The recorded Claude Code sessions (`runs/claude-code_*`) and their replays
-(`runs/replay_*`) carry Claude Code's own prompt text: they are not in this public repository; we can
+instruction files. The recorded Claude Code sessions (`runs/2026-10-03/claude-code_*`) and their replays
+(`runs/2026-10-03/replay_*`) carry Claude Code's own prompt text: they are not in this public repository; we can
 share them privately on request.
 
 ## Reproduce
 
 ```
 API_KEY=<Muse key> python3 repro-nonascii.py                                     # the six cases
-API_KEY=<Muse key> python3 replay.py runs/claude-code_muse_1 out-a as-is         # Claude Code requests: 0 %
-API_KEY=<Muse key> python3 replay.py runs/claude-code_muse_1 out-b ascii-tools   # same, tool descriptions in ASCII: read in full
-python3 check-prefix.py runs/claude-code*
+API_KEY=<Muse key> python3 replay.py runs/2026-10-03/claude-code_muse_1 out-a as-is         # Claude Code requests: 0 %
+API_KEY=<Muse key> python3 replay.py runs/2026-10-03/claude-code_muse_1 out-b ascii-tools   # same, tool descriptions in ASCII: read in full
+python3 check-prefix.py runs/2026-10-03/claude-code*
 MUSE_API_KEY=<Muse key> python3 claude-code-compare.py muse out-c                # a new Claude Code session, recorded
 MUSE_API_KEY=<Muse key> python3 claude-code-compare.py muse out-d --ascii-tools  # the same, with the workaround
 ```

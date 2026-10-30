@@ -1,0 +1,6 @@
+pause    2s  case A: req2  98% (7eaf88eb-ac17-4cd6-a1ca-31663fc057f0) | req3  98% (e12350fe-ccee-425c-8885-a061e4ba8071) | req4   0% (559c2ec9-3a54-4a25-8eb2-b3581f3d9b07)
+pause    2s  case B: req2  98% (b16e0d08-127a-4157-ae66-1dfa5037450f) | req3   0% (09861474-eebd-4c57-baa6-93574a11f921) | req4  75% (5f456e35-8335-48ef-a707-8fa6c7183b19)
+pause   10s  case A: req2  98% (4c2e1c22-bcfd-4b86-ab64-914895b3aa4e) | req3  98% (7635fddf-ec09-4d2f-8779-f62344369277) | req4 100% (73b31a8d-9753-40c0-833a-4cdc5c2c7f1f)
+pause   10s  case B: req2   0% (5246e657-a18e-47fb-ae9c-7af40bf1c05c) | req3  98% (9f57277f-4374-4985-9977-e46455e586e5) | req4  52% (6720f4fa-4770-493e-8119-e5f7f6e237b7)
+pause   30s  case A: req2  98% (72a4f57d-1670-4834-805f-49bcb7d035d8) | req3  98% (695f9b99-39da-4525-a3a6-479611af2a96) | req4 100% (2417fbb7-ac68-4114-a122-207f4437fa5a)
+pause   30s  case B: req2  98% (e3dd7e0d-c488-4dca-9b76-eddc99392cfc) | req3   0% (7ae817de-9eaf-4066-bb67-2ae8bdd43187) | req4 100% (1a3bb4e2-0b6f-4a46-94cb-179553b34fc9)

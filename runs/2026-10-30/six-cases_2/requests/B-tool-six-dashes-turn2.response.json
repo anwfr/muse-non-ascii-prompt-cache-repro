@@ -1,0 +1,46 @@
+{
+ "url": "https://api.meta.ai/v1/messages",
+ "request_headers": {
+  "anthropic-version": "2023-06-01",
+  "content-type": "application/json",
+  "x-api-key": "<redacted>"
+ },
+ "request_body_file": "B-tool-six-dashes-turn2.request.json",
+ "status": 200,
+ "response_headers": {
+  "Content-Type": "application/json",
+  "x-ratelimit-limit-requests": "150",
+  "x-ratelimit-remaining-requests": "137",
+  "x-ratelimit-limit-tokens": "3000000",
+  "x-ratelimit-remaining-tokens": "2960235",
+  "x-request-id": "9c546e84-4761-4f71-9da8-a1f705da47a6",
+  "Access-Control-Allow-Origin": "*",
+  "Date": "Fri, 30 Oct 2026 09:12:46 GMT",
+  "x-route": "model-api-rust",
+  "Connection": "close",
+  "Content-Length": "1791"
+ },
+ "response_body": {
+  "content": [
+   {
+    "data": "Q-PaDgEwNjtI1HOtlkjNwbXsP2eD47LcLr-EjzaI_00iiwY-HLBNswblM0S_mOfW1vnTsgHbiwB7WfmnTPnqN0u63DiHn6cL3xDX5Jl0B3LjQjh1RgWyPsUZzdTnkZ4eMtxBHecWT-PkTn1v1e9WV837m48hQdkM_D5z6h1XjdEFfJEkf7PDHKbo5qIh7GTIl0_8oPbg3PxuBx15HXyszvuYfBxUV_4AnjCZfpVzzftw_Ou6FdCISVruTXJpfXqVyIOPuQ5wRxn-vuXeCGsYE_EX0eeCYR4p-lBOjMPKsakD2_HhnwpPZ2i1ehR3HNHwamNdBK_cEcDoyP7k_vbg31va-c1HLWmqHUaeLApZC0rcZDTybxqQE668_oWrCNKagHxmHinKNQ8b0fecfo1MW3xrKZrFxsnZhnbqkixPtapzd41rGghlIpEaGEx95Ys7zGQpi7dCVfz_wZK5aPLzdGmmeWac0NLqy2_FuTHC1nm6zCCo7KnorlQ25L22VKe30fxGjOcbWW8feYv4nHznbOqYqJ64Z8UFFc1Ao468_-f7kyaaHDpnlKgf1wEfDsFhgpWJ1hJXPsN_AcSmQHcvxdUy7wSBR-fTSHGzEZc3leP-xWIEYHL9ih4NN2xqaT9yQ8N-zaewzXMODC58bAo69ryzjc7NkCxlRkUG7whNNlTS4YpNcquZtXFgeep-SzZHosSQlqcJmBBPwdYe1HZB1STkn8Jx_Yv1-xILqzRb2T_fvmsm43zAMor5-NGU5p8bJ_EbI0SAhe5n5AMlM2po1zWKLFzuBdY3YvRT2_TQl5TZf2XOwMU1QT__9fZATllZCuuy8zcs0g8YgE0W9kLpNfFHnY3ufo2v7VLPN9cpeOaS3SKyUSVaXBaqHZaS3qweKuj2_oD3SAMIE9dfR82Ad7UzYY1_MWVAyAQWtQHHMHuZb7Z8lYKfQf5FouF63yESlFdWN7rRYbR9-hmiLYYiESLTszH2jMFIcw3HD8z0eCj1fbV44Q1O70j7SDsJ5pDxvznvYg7160JcIpjId_DTuoUO4u3JBiKJKtOthB51aUnbpvVHBEy0tmKt1IqSuSk30TlgQLTDJdyIaFswj8YqZpRZVw7AOOKxW-iXH0pdEQcmKdowIOT7_wNvj8iwhl-7q8fO2iAT1KhY9shzqCctRzupAwm3OP3RGOIdRi_2dheWd9YnK5wZAiy5PZx9Lcl0_XqDK6Wj7ey_KT1nIxiiGs5-I1v0wR_i8H-_ceSc0lyIrjiLrjCemuCc6wxCDTNn8nZYP1n2wfEQra7sQfiJJjdpqZo1ekDUzAFp44cVu7dUJTVpAM9Za6mI3khyYS2WEKKJY8orUSkFq5pVjdwzE4x0AKX5zshY-WB8kZreTESPqrIc5bloab7NcLipjAuLJtNtuTZqSQQ2KePUhQ",
+    "type": "redacted_thinking"
+   }
+  ],
+  "id": "msg_6ae45f8e00cf344ef6524908",
+  "model": "muse-spark-1.3-contributor",
+  "role": "assistant",
+  "stop_reason": "max_tokens",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "input_tokens": 5596,
+   "output_tokens": 16,
+   "output_tokens_details": {
+    "thinking_tokens": 14
+   }
+  }
+ }
+}
